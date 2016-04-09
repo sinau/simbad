@@ -1,34 +1,38 @@
 package project.view;
 
-import java.awt.Color;
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import java.awt.Color;
+import javax.swing.JCheckBox;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import java.awt.Font;
+import javax.swing.JTextPane;
+import javax.swing.border.BevelBorder;
+import java.awt.Button;
 
 public class RegistrasiGui extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textCari;
-	private JLabel label;
+	private JLabel lblNama;
 	private JTextField textNama;
-	private JLabel label_1;
+	private JLabel lblUniv;
 	private JTextField textAsal;
 	private JLabel label_2;
-	private JTextField textTelepon;
+	private JTextField lblTelp;
 	private JLabel label_3;
-	private JTextField textAlamat;
+	private JTextField lblMail;
 	private JLabel label_4;
 	private JLabel lblNewLabel;
 
@@ -64,15 +68,10 @@ public class RegistrasiGui extends JFrame {
 		
 		
 		textCari = new JTextField();
-		textCari.setBounds(10, 106, 344, 20);
+		textCari.setBounds(10, 106, 303, 20);
 		contentPane.add(textCari);
 		textCari.setColumns(10);
-		
-		JLabel labelCari = new JLabel("");
 		Image imageCari = new ImageIcon(this.getClass().getResource("/cari.png")).getImage();
-		labelCari.setIcon(new ImageIcon(imageCari));
-		labelCari.setBounds(364, 95, 33, 49);
-		contentPane.add(labelCari);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(0, 128, 128));
@@ -81,10 +80,10 @@ public class RegistrasiGui extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		label = new JLabel("Nama");
-		label.setForeground(Color.BLACK);
-		label.setBounds(10, 14, 132, 14);
-		panel.add(label);
+		lblNama = new JLabel("Nama");
+		lblNama.setForeground(Color.BLACK);
+		lblNama.setBounds(10, 14, 132, 14);
+		panel.add(lblNama);
 		
 		textNama = new JTextField();
 		textNama.setEnabled(false);
@@ -93,10 +92,10 @@ public class RegistrasiGui extends JFrame {
 		textNama.setBounds(139, 11, 237, 20);
 		panel.add(textNama);
 		
-		label_1 = new JLabel("Asal Universitas");
-		label_1.setForeground(Color.BLACK);
-		label_1.setBounds(10, 42, 132, 14);
-		panel.add(label_1);
+		lblUniv = new JLabel("Asal Universitas");
+		lblUniv.setForeground(Color.BLACK);
+		lblUniv.setBounds(10, 42, 132, 14);
+		panel.add(lblUniv);
 		
 		textAsal = new JTextField();
 		textAsal.setEnabled(false);
@@ -110,24 +109,24 @@ public class RegistrasiGui extends JFrame {
 		label_2.setBounds(10, 67, 126, 14);
 		panel.add(label_2);
 		
-		textTelepon = new JTextField();
-		textTelepon.setEnabled(false);
-		textTelepon.setEditable(false);
-		textTelepon.setColumns(10);
-		textTelepon.setBounds(139, 64, 237, 20);
-		panel.add(textTelepon);
+		lblTelp = new JTextField();
+		lblTelp.setEnabled(false);
+		lblTelp.setEditable(false);
+		lblTelp.setColumns(10);
+		lblTelp.setBounds(139, 64, 237, 20);
+		panel.add(lblTelp);
 		
 		label_3 = new JLabel("Alamat E-Mail");
 		label_3.setForeground(Color.BLACK);
 		label_3.setBounds(10, 92, 126, 14);
 		panel.add(label_3);
 		
-		textAlamat = new JTextField();
-		textAlamat.setEnabled(false);
-		textAlamat.setEditable(false);
-		textAlamat.setColumns(10);
-		textAlamat.setBounds(139, 89, 237, 20);
-		panel.add(textAlamat);
+		lblMail = new JTextField();
+		lblMail.setEnabled(false);
+		lblMail.setEditable(false);
+		lblMail.setColumns(10);
+		lblMail.setBounds(139, 89, 237, 20);
+		panel.add(lblMail);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(0, 128, 128));
@@ -168,13 +167,13 @@ public class RegistrasiGui extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (checkboxNonAnggota.isSelected()){
 					textNama.setEnabled(true);
-					textAlamat.setEnabled(true);
+					lblMail.setEnabled(true);
 					textAsal.setEnabled(true);
-					textTelepon.setEnabled(true);
+					lblTelp.setEnabled(true);
 					textNama.setEditable(true);
-					textAlamat.setEditable(true);
+					lblMail.setEditable(true);
 					textAsal.setEditable(true);
-					textTelepon.setEditable(true);
+					lblTelp.setEditable(true);
 					
 					cbModul.setEnabled(false);
 					textCari.setEnabled(false);
@@ -182,13 +181,13 @@ public class RegistrasiGui extends JFrame {
 				else
 				{
 					textNama.setEnabled(false);
-					textAlamat.setEnabled(false);
+					lblMail.setEnabled(false);
 					textAsal.setEnabled(false);
-					textTelepon.setEnabled(false);
+					lblTelp.setEnabled(false);
 					textNama.setEditable(false);
-					textAlamat.setEditable(false);
+					lblMail.setEditable(false);
 					textAsal.setEditable(false);
-					textTelepon.setEditable(false);
+					lblTelp.setEditable(false);
 					
 					cbModul.setEnabled(true);
 					textCari.setEnabled(true);
@@ -220,5 +219,9 @@ public class RegistrasiGui extends JFrame {
 		labelSinauAcademy.setIcon(new ImageIcon(imageSinauAcademy));
 		labelSinauAcademy.setBounds(35, 11, 335, 84);
 		contentPane.add(labelSinauAcademy);	
+		
+		Button buttonCari = new Button("Cari");
+		buttonCari.setBounds(327, 104, 70, 22);
+		contentPane.add(buttonCari);
 	}
 }

@@ -1,23 +1,41 @@
 package project.view;
 
-import java.awt.Color;
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.Font;
+import java.awt.Image;
 
-import javax.swing.JButton;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.Button;
+import javax.swing.JTable;
+import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.border.BevelBorder;
 
 public class PembayaranGui extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
 	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JLabel lblNewLabel;
+	private JPanel panel;
+	private JLabel lblNama;
+	private JTextField textNama;
+	private JLabel lblTotalBayar;
+	private JTextField textTotalBayar;
+	private JLabel lblTerbayar;
+	private JTextField textTerbayar;
+	private JTextField textSisa;
+	private JLabel lblSisa;
+	private JPanel panel_1;
+	private JLabel lblBayar;
+	private JTextField textPelunasan;
+	private JLabel lblSisa_1;
+	private JTextField textSisaPelunasan;
+	private Button button_2;
 
 	/**
 	 * Launch the application.
@@ -39,65 +57,116 @@ public class PembayaranGui extends JFrame {
 	 * Create the frame.
 	 */
 	public PembayaranGui() {
+		setTitle("Pembayaran");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 562, 415);
+		setBounds(100, 100, 524, 487);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(160, 82, 45));
+		contentPane.setBackground(new Color(0, 0, 51));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("PEMBAYARAN\r\n");
-		lblNewLabel.setFont(new Font("Stencil", Font.BOLD, 20));
-		lblNewLabel.setBounds(193, 2, 294, 37);
-		contentPane.add(lblNewLabel);
+		JLabel sinauAcademy = new JLabel("");
+		Image imageSinauAcademy = new ImageIcon(this.getClass().getResource("/sinauacademy.png")).getImage();
+		sinauAcademy.setIcon(new ImageIcon(imageSinauAcademy));
+		sinauAcademy.setBounds(89, 11, 321, 93);
+		contentPane.add(sinauAcademy);
 		
-		JLabel lblSinauAcademy = new JLabel("SINAU ACADEMY");
-		lblSinauAcademy.setFont(new Font("Stencil", Font.BOLD, 16));
-		lblSinauAcademy.setBounds(193, 34, 154, 17);
-		contentPane.add(lblSinauAcademy);
-		
-		JLabel lblMasukanNik = new JLabel("MASUKAN NIK");
-		lblMasukanNik.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		lblMasukanNik.setForeground(new Color(230, 230, 250));
-		lblMasukanNik.setBounds(25, 70, 112, 49);
-		contentPane.add(lblMasukanNik);
-		
-		textField = new JTextField();
-		textField.setBounds(158, 77, 237, 37);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		Button button = new Button("Cari");
+		button.setBounds(428, 138, 70, 22);
+		contentPane.add(button);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(62, 130, 185, 20);
-		contentPane.add(textField_1);
 		textField_1.setColumns(10);
+		textField_1.setBounds(10, 140, 412, 20);
+		contentPane.add(textField_1);
 		
-		JLabel lblNama = new JLabel("NAMA");
-		lblNama.setBounds(25, 133, 46, 14);
-		contentPane.add(lblNama);
+		Button button_1 = new Button("Pelunasan");
+		button_1.setBounds(428, 301, 70, 22);
+		contentPane.add(button_1);
 		
-		JLabel lblNewLabel_1 = new JLabel("ANGKATAN");
-		lblNewLabel_1.setBounds(265, 133, 60, 14);
-		contentPane.add(lblNewLabel_1);
+		lblNewLabel = new JLabel("Masukan ID Pembayaran");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setBounds(10, 115, 124, 14);
+		contentPane.add(lblNewLabel);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(327, 130, 46, 20);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		panel.setBackground(new Color(0, 128, 128));
+		panel.setBounds(10, 168, 488, 127);
+		contentPane.add(panel);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(74, 205, 288, 61);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
+		lblNama = new JLabel("Nama");
+		lblNama.setForeground(Color.BLACK);
+		lblNama.setBounds(10, 14, 126, 14);
+		panel.add(lblNama);
 		
-		JLabel lblRp = new JLabel("Rp");
-		lblRp.setFont(new Font("Tahoma", Font.PLAIN, 33));
-		lblRp.setBounds(25, 176, 76, 101);
-		contentPane.add(lblRp);
+		textNama = new JTextField();
+		textNama.setColumns(10);
+		textNama.setBounds(147, 11, 331, 20);
+		panel.add(textNama);
 		
-		JButton btnNewButton = new JButton("BAYAR");
-		btnNewButton.setBounds(349, 312, 138, 31);
-		contentPane.add(btnNewButton);
+		lblTotalBayar = new JLabel("Total bayar");
+		lblTotalBayar.setForeground(Color.BLACK);
+		lblTotalBayar.setBounds(10, 41, 126, 14);
+		panel.add(lblTotalBayar);
+		
+		textTotalBayar = new JTextField();
+		textTotalBayar.setColumns(10);
+		textTotalBayar.setBounds(147, 38, 331, 20);
+		panel.add(textTotalBayar);
+		
+		lblTerbayar = new JLabel("Terbayar");
+		lblTerbayar.setForeground(Color.BLACK);
+		lblTerbayar.setBounds(10, 69, 126, 14);
+		panel.add(lblTerbayar);
+		
+		textTerbayar = new JTextField();
+		textTerbayar.setColumns(10);
+		textTerbayar.setBounds(147, 66, 331, 20);
+		panel.add(textTerbayar);
+		
+		textSisa = new JTextField();
+		textSisa.setColumns(10);
+		textSisa.setBounds(147, 94, 331, 20);
+		panel.add(textSisa);
+		
+		lblSisa = new JLabel("Sisa");
+		lblSisa.setForeground(Color.BLACK);
+		lblSisa.setBounds(10, 97, 126, 14);
+		panel.add(lblSisa);
+		
+		panel_1 = new JPanel();
+		panel_1.setLayout(null);
+		panel_1.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		panel_1.setBackground(new Color(0, 128, 128));
+		panel_1.setBounds(10, 329, 488, 72);
+		contentPane.add(panel_1);
+		
+		lblBayar = new JLabel("Bayar");
+		lblBayar.setForeground(Color.BLACK);
+		lblBayar.setBounds(10, 14, 126, 14);
+		panel_1.add(lblBayar);
+		
+		textPelunasan = new JTextField();
+		textPelunasan.setColumns(10);
+		textPelunasan.setBounds(147, 11, 331, 20);
+		panel_1.add(textPelunasan);
+		
+		lblSisa_1 = new JLabel("Sisa");
+		lblSisa_1.setForeground(Color.BLACK);
+		lblSisa_1.setBounds(10, 42, 126, 14);
+		panel_1.add(lblSisa_1);
+		
+		textSisaPelunasan = new JTextField();
+		textSisaPelunasan.setColumns(10);
+		textSisaPelunasan.setBounds(147, 39, 331, 20);
+		panel_1.add(textSisaPelunasan);
+		
+		button_2 = new Button("Simpan");
+		button_2.setBounds(233, 417, 70, 22);
+		contentPane.add(button_2);
 	}
+
 }

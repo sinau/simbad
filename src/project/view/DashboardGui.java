@@ -91,6 +91,12 @@ public class DashboardGui extends JFrame {
 		menuBar.add(menuJadwal);
 		
 		JMenu menuPembayaran = new JMenu("");
+		menuPembayaran.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				PembayaranGui pembayaranGui = new PembayaranGui();
+				pembayaranGui.setVisible(true);
+			}
+		});
 		menuPembayaran.setToolTipText("Pembayaran");
 		Image imageMenuPembayaran = new ImageIcon(this.getClass().getResource("/gaji.png")).getImage();
 		menuPembayaran.setIcon(new ImageIcon(imageMenuPembayaran));
@@ -99,6 +105,12 @@ public class DashboardGui extends JFrame {
 		menuBar.add(menuPembayaran);
 		
 		JMenuItem menuInventaris = new JMenuItem("");
+		menuInventaris.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				GuiInventaris inventarisGui = new GuiInventaris();
+				inventarisGui.show();
+			}
+		});
 		menuInventaris.setToolTipText("Inventaris");
 		Image imageMntmNewMenuItem = new ImageIcon(this.getClass().getResource("/inventaris.png")).getImage();
 		menuInventaris.setIcon(new ImageIcon(imageMntmNewMenuItem));
