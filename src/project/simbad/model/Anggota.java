@@ -1,70 +1,89 @@
 package project.simbad.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Anggota {
-	private String idAgt;
-	private String namaAgt;
-	private String alamat;
-	private String tempatLahir;
-	private Date tanggalLahir;
-	private String jenisKelamin;
-	private String asalSekolah;
-	private String noTelp;
-	private String email;
-	public String getIdAgt() {
-		return idAgt;
+
+	private static String id_agt;
+	private static String nama_agt;
+	private static String alamat;
+	private static String tempat_lahir;
+	private static Date tanggal_lahir;
+	private static String jeniskelamin;
+	private static String asal_sekolah;
+	private static String no_telpn;
+	private static String email;
+
+	public static String getId_agt() {
+		return id_agt;
 	}
-	public void setIdAgt(String idAgt) {
-		this.idAgt = idAgt;
+
+	public static void setId_agt(String id_agt) {
+		Anggota.id_agt = id_agt;
 	}
-	public String getNamaAgt() {
-		return namaAgt;
+
+	public static String getNama_agt() {
+		return nama_agt;
 	}
-	public void setNamaAgt(String namaAgt) {
-		this.namaAgt = namaAgt;
+
+	public static void setNama_agt(String nama_agt) {
+		Anggota.nama_agt = nama_agt;
 	}
-	public String getAlamat() {
+
+	public static String getAlamat() {
 		return alamat;
 	}
-	public void setAlamat(String alamat) {
-		this.alamat = alamat;
+
+	public static void setAlamat(String alamat) {
+		Anggota.alamat = alamat;
 	}
-	public String getTempatLahir() {
-		return tempatLahir;
+
+	public static String getTempat_lahir() {
+		return tempat_lahir;
 	}
-	public void setTempatLahir(String tempatLahir) {
-		this.tempatLahir = tempatLahir;
+
+	public static void setTempat_lahir(String tempat_lahir) {
+		Anggota.tempat_lahir = tempat_lahir;
 	}
-	public Date getTanggalLahir() {
-		return tanggalLahir;
+
+	public static Date getTanggal_lahir() {
+		return tanggal_lahir;
 	}
-	public void setTanggalLahir(Date tanggalLahir) {
-		this.tanggalLahir = tanggalLahir;
+
+	public static void setTanggal_lahir(Date tanggal_lahir) {
+		Anggota.tanggal_lahir = tanggal_lahir;
 	}
-	public String getJenisKelamin() {
-		return jenisKelamin;
+
+	public static String getJeniskelamin() {
+		return jeniskelamin;
 	}
-	public void setJenisKelamin(String jenisKelamin) {
-		this.jenisKelamin = jenisKelamin;
+
+	public static void setJeniskelamin(String jeniskelamin) {
+		Anggota.jeniskelamin = jeniskelamin;
 	}
-	public String getAsalSekolah() {
-		return asalSekolah;
+
+	public static String getAsal_sekolah() {
+		return asal_sekolah;
 	}
-	public void setAsalSekolah(String asalSekolah) {
-		this.asalSekolah = asalSekolah;
+
+	public static void setAsal_sekolah(String asal_sekolah) {
+		Anggota.asal_sekolah = asal_sekolah;
 	}
-	public String getNoTelp() {
-		return noTelp;
+
+	public static String getNo_telpn() {
+		return no_telpn;
 	}
-	public void setNoTelp(String noTelp) {
-		this.noTelp = noTelp;
+
+	public static void setNo_telpn(String no_telpn) {
+		Anggota.no_telpn = no_telpn;
 	}
-	public String getEmail() {
+
+	public static String getEmail() {
 		return email;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+
+	public static void setEmail(String email) {
+		Anggota.email = email;
 	}
-	
+
 }
